@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="130.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="76.0" layoutY="30.0" text="请选择你的登陆身份" />
+      <Button layoutX="33.0" layoutY="70.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="83.0" text="学生" />
+      <Button layoutX="147.0" layoutY="70.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="83.0" text="老师" />
+   </children>
+</AnchorPane>
