@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.view.SSelectController">
+   <children>
+      <SplitPane dividerPositions="0.41566265060240964" layoutX="30.0" layoutY="34.0" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <GridPane layoutX="19.0" layoutY="14.0" prefHeight="276.0" prefWidth="159.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="56.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="103.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="学号" />
+                        <Label text="姓名" GridPane.rowIndex="1" />
+                        <Label text="性别" GridPane.rowIndex="2" />
+                        <Label text="出生日期" GridPane.rowIndex="3" />
+                        <Label text="专业编号" GridPane.rowIndex="4" />
+                        <Label text="入学时间" GridPane.rowIndex="5" />
+                        <Label text="联系方式" GridPane.rowIndex="6" />
+                        <Label fx:id="sid" text="0001" GridPane.columnIndex="1" />
+                        <Label fx:id="sname" text="studentA" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="sex" text="man" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="birthday" text="19940506" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="major" text="MajorA" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="stime" text="20130901" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="phone" text="1234567" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

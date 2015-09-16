@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane prefHeight="130.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="130.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.view.LoginLayoutController">
    <children>
-      <Label layoutX="76.0" layoutY="30.0" text="请选择你的登陆身份" />
-      <Button layoutX="33.0" layoutY="70.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="83.0" text="学生" />
-      <Button layoutX="147.0" layoutY="70.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="83.0" text="老师" />
+      <Label fx:id="text" layoutX="76.0" layoutY="30.0" text="请选择你的登陆身份" />
+      <Button fx:id="student" layoutX="33.0" layoutY="70.0" mnemonicParsing="false" onAction="#OpenSLogin" prefHeight="23.0" prefWidth="83.0" text="学生" />
+      <Button fx:id="teacher" layoutX="147.0" layoutY="70.0" mnemonicParsing="false" onAction="#OpenTLogin" prefHeight="23.0" prefWidth="83.0" text="老师" />
    </children>
 </AnchorPane>
