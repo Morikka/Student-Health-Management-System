@@ -2,9 +2,8 @@ package Controller.model;
 import java.time.LocalDate;
 
 import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -17,12 +16,27 @@ public class Student {
 	private final ObjectProperty<LocalDate> Stame;
 	private final StringProperty Phone;
 	private final StringProperty Major;
+	
+	public Student(){
+		this.Sid = new SimpleStringProperty("0004");
+		this.Name = new SimpleStringProperty("StudentD");
+		this.Sex = new SimpleBooleanProperty(false);
+		this.Birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1994, 2, 21));
+		this.Stame = new SimpleObjectProperty<LocalDate>(LocalDate.of(2014, 9, 1));
+		this.Phone = new SimpleStringProperty("1234521");
+		this.Major = new SimpleStringProperty("004");
+	}
+	
 	public StringProperty getSid() {
 		return Sid;
 	}
 	public void setSid(String sid){
 		this.Sid.set(sid);
 	}
+	public StringProperty SidProperty() {
+		return Sid;
+	}
+
 	public StringProperty getName() {
 		return Name;
 	}
@@ -32,17 +46,31 @@ public class Student {
 	public BooleanProperty getSex() {
 		return Sex;
 	}
+	public void setSex(Boolean sex){
+		this.Sex.set(sex);
+	}
 	public ObjectProperty<LocalDate> getBirthday() {
 		return Birthday;
 	}
+    public void setBirthday(LocalDate birthday) {
+        this.Birthday.set(birthday);
+    }
 	public ObjectProperty<LocalDate> getStame() {
 		return Stame;
+	}
+	public void setStame(LocalDate stame){
+		this.Stame.set(stame);
 	}
 	public StringProperty getPhone() {
 		return Phone;
 	}
+	public void setPhone(String phone){
+		this.Phone.set(phone);
+	}
 	public StringProperty getMajor() {
 		return Major;
 	}
-
+	public void setMajor(String major){
+		this.Major.set(major);
+	}
 }
