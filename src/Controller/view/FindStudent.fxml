@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="209.0" prefWidth="175.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.view.FindStuController">
+   <children>
+      <Label layoutX="39.0" layoutY="24.0" text="学号" />
+      <Label layoutX="39.0" layoutY="52.0" text="姓名" />
+      <Label layoutX="39.0" layoutY="79.0" text="性别" />
+      <Label layoutX="27.0" layoutY="106.0" text="出生日期" />
+      <Label layoutX="27.0" layoutY="132.0" text="入学日期" />
+      <Label layoutX="27.0" layoutY="157.0" text="联系方式" />
+      <Label layoutX="39.0" layoutY="180.0" text="专业" />
+      <Label fx:id="sid" layoutX="99.0" layoutY="24.0" text="Label" />
+      <Label fx:id="sname" layoutX="99.0" layoutY="52.0" text="Label" />
+      <Label fx:id="sex" layoutX="99.0" layoutY="79.0" text="Label" />
+      <Label fx:id="birthday" layoutX="99.0" layoutY="106.0" text="Label" />
+      <Label fx:id="stime" layoutX="99.0" layoutY="132.0" text="Label" />
+      <Label fx:id="phone" layoutX="99.0" layoutY="157.0" text="Label" />
+      <Label fx:id="major" layoutX="99.0" layoutY="180.0" text="Label" />
+   </children>
+</AnchorPane>

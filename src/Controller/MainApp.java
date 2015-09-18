@@ -3,6 +3,8 @@ package Controller;
 import java.io.IOException;
 
 import Controller.view.AddStuController;
+import Controller.view.FindStuController;
+import Controller.view.FindTextController;
 import Controller.view.LoginLayoutController;
 import Controller.view.SLoginController;
 import Controller.view.SSelectController;
@@ -20,6 +22,7 @@ public class MainApp extends Application {
 	private AnchorPane rootLayout;
 	public String sSid = "";
 	public String tSid = "";
+	public String sDate = "";
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
@@ -176,7 +179,52 @@ System.out.println(this.sSid);
 //			controller.setMainApp(this);
 //			controller.init();
 	        dialogStage.showAndWait();
-		
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	public void sFind(String ssid) {
+		this.sSid = ssid;
+		try {
+		 	FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/FindStudent.fxml"));     
+            
+            AnchorPane sLayout = (AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Student Add");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(sLayout);
+            dialogStage.setScene(scene);
+
+            FindStuController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setMainApp(this);
+			controller.init();
+	        dialogStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	public void tFind(String date){
+		this.sDate = date;
+		try {
+		 	FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/FindText.fxml"));     
+            
+            AnchorPane sLayout = (AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Student Add");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(sLayout);
+            dialogStage.setScene(scene);
+
+            FindTextController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setMainApp(this);
+			controller.init();
+	        dialogStage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
         }

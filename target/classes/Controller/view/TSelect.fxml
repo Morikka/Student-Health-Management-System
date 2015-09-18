@@ -32,10 +32,19 @@
           </Tab>
           <Tab text="成绩">
                <content>
-                  <SplitPane dividerPositions="0.9083557951482479" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                  <SplitPane dividerPositions="0.8679245283018868" orientation="VERTICAL" prefHeight="315.0" prefWidth="235.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                      <AnchorPane fx:id="uptest" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ListView fx:id="tlist" layoutX="18.0" layoutY="23.0" prefHeight="334.0" prefWidth="235.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Button fx:id="tfind" layoutX="23.0" layoutY="12.0" mnemonicParsing="false" onAction="#tFindButton" text="查询" />
+                              <Button fx:id="tmodify" layoutX="72.0" layoutY="12.0" mnemonicParsing="false" onAction="#tModifyButton" text="修改" />
+                              <Button fx:id="tadd" layoutX="120.0" layoutY="12.0" mnemonicParsing="false" onAction="#tAddButton" text="添加" />
+                              <Button fx:id="tdelete" layoutX="172.0" layoutY="12.0" mnemonicParsing="false" onAction="#tDeleteButton" text="删除" />
+                           </children></AnchorPane>
                     </items>
                   </SplitPane>
                </content>

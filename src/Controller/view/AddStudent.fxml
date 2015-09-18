@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="331.0" prefWidth="219.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.view.AddStuController">
+<AnchorPane prefHeight="400.0" prefWidth="229.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.view.AddStuController">
    <children>
       <Label layoutX="41.0" layoutY="52.0" text="学号" />
       <Label layoutX="41.0" layoutY="81.0" text="姓名" />
@@ -13,9 +13,9 @@
       <Label layoutX="41.0" layoutY="141.0" text="出生日期" />
       <Label layoutX="41.0" layoutY="170.0" text="入学日期" />
       <Label layoutX="41.0" layoutY="196.0" text="联系方式" />
-      <Label layoutX="41.0" layoutY="224.0" text="专业" />
-      <Button fx:id="sure" layoutX="53.0" layoutY="265.0" mnemonicParsing="false" onAction="#SureButton" text="确定" />
-      <Button fx:id="cancel" layoutX="129.0" layoutY="265.0" mnemonicParsing="false" onAction="#cancelButton" text="取消" />
+      <Label layoutX="41.0" layoutY="224.0" text="专业编号" />
+      <Button fx:id="sure" layoutX="52.0" layoutY="347.0" mnemonicParsing="false" onAction="#SureButton" text="确定" />
+      <Button fx:id="cancel" layoutX="128.0" layoutY="347.0" mnemonicParsing="false" onAction="#cancelButton" text="取消" />
       <TextField fx:id="sid" layoutX="99.0" layoutY="48.0" prefHeight="23.0" prefWidth="102.0" />
       <TextField fx:id="sname" layoutX="99.0" layoutY="77.0" prefHeight="23.0" prefWidth="102.0" />
       <TextField fx:id="sex" layoutX="98.0" layoutY="108.0" prefHeight="23.0" prefWidth="102.0" />

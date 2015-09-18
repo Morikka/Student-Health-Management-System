@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="274.0" prefWidth="163.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.view.FindTextController">
+   <children>
+      <Label layoutX="30.0" layoutY="25.0" text="学号" />
+      <Label layoutX="30.0" layoutY="54.0" text="日期" />
+      <Label layoutX="30.0" layoutY="84.0" text="年龄" />
+      <Label layoutX="30.0" layoutY="113.0" text="身高" />
+      <Label layoutX="30.0" layoutY="144.0" text="体重" />
+      <Label layoutX="30.0" layoutY="173.0" text="肺活量" />
+      <Label layoutX="30.0" layoutY="200.0" text="50米" />
+      <Label layoutX="30.0" layoutY="227.0" text="跳远" />
+      <Label fx:id="sid" layoutX="94.0" layoutY="25.0" text="Label" />
+      <Label fx:id="tdate" layoutX="94.0" layoutY="54.0" text="Label" />
+      <Label fx:id="age" layoutX="94.0" layoutY="84.0" text="Label" />
+      <Label fx:id="height" layoutX="94.0" layoutY="113.0" text="Label" />
+      <Label fx:id="weight" layoutX="94.0" layoutY="144.0" text="Label" />
+      <Label fx:id="fvc" layoutX="94.0" layoutY="173.0" text="Label" />
+      <Label fx:id="run" layoutX="94.0" layoutY="200.0" text="Label" />
+      <Label fx:id="jump" layoutX="94.0" layoutY="227.0" text="Label" />
+   </children>
+</AnchorPane>
