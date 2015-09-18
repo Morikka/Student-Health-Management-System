@@ -38,8 +38,8 @@ public class SLoginController {
 	}
 	@FXML
     private void initialize() {
+//		System.out.println(this.mainApp.sSid);
         // Initialize the person table with the two columns.
-
     }
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
@@ -58,6 +58,7 @@ public class SLoginController {
     	spw = password.getText();
     	if(hasssid()){
     		System.out.println("YES");
+   System.out.println(ssid); 		
         	mainApp.SSelect(ssid);
     	}
     	else{

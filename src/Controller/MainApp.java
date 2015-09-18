@@ -1,8 +1,8 @@
 package Controller;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 
+import Controller.view.AddStuController;
 import Controller.view.LoginLayoutController;
 import Controller.view.SLoginController;
 import Controller.view.SSelectController;
@@ -18,10 +18,13 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
+	public String sSid = "";
+	public String tSid = "";
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Login");
+		
 		initRootLayout();
 	}
 	 /**
@@ -39,8 +42,7 @@ public class MainApp extends Application {
 	             primaryStage.setScene(scene);
 	             primaryStage.show();
 	             LoginLayoutController controller = loader.getController();
-	             controller.setMainApp(this);
-	             
+	             controller.setMainApp(this);         
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
@@ -51,11 +53,11 @@ public class MainApp extends Application {
 	}
 	public void SLogin() {
 		// TODO Auto-generated method stub
-		 try {
+		 try {			 	
 	            // Load student login from fxml file.
 	            FXMLLoader loader = new FXMLLoader();
 	            loader.setLocation(MainApp.class.getResource("view/SLogin.fxml"));
-	            
+	           
 	            AnchorPane sLayout = (AnchorPane) loader.load();
 	            Stage dialogStage = new Stage();
 	            dialogStage.setTitle("Student Login");
@@ -67,7 +69,7 @@ public class MainApp extends Application {
 				// Set the person into the controller.
 				SLoginController controller = loader.getController();
 				controller.setDialogStage(dialogStage);  
-	            controller.setMainApp(this);
+				controller.setMainApp(this);
 	            dialogStage.showAndWait();
 	        } catch (IOException e) {
 	            e.printStackTrace();
@@ -99,9 +101,12 @@ public class MainApp extends Application {
 	        }	
 	}
 	public void SSelect(String ssid){
+		this.sSid = ssid;
+//		sSid = ssid;
+System.out.println(this.sSid);
 		try {
 		 	FXMLLoader loader = new FXMLLoader();
-		 	//loader.setCharset(ssid);
+		 	
             loader.setLocation(MainApp.class.getResource("view/SSelect.fxml"));     
             
             AnchorPane sLayout = (AnchorPane) loader.load();
@@ -113,8 +118,9 @@ public class MainApp extends Application {
             dialogStage.setScene(scene);
 
             SSelectController controller = loader.getController();
-			controller.setSid(ssid);
 			controller.setDialogStage(dialogStage);
+			controller.setMainApp(this);
+			controller.init();
 	        dialogStage.showAndWait();
 //	        controller.getSid();
 //			
@@ -122,11 +128,11 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
 	}
-	public void TSelect() {
+	public void TSelect(String tsid) {
 		// TODO Auto-generated method stub
+		this.tSid = tsid;
 		try {
 		 	FXMLLoader loader = new FXMLLoader();
-		 	//loader.setCharset(ssid);
             loader.setLocation(MainApp.class.getResource("view/TSelect.fxml"));     
             
             AnchorPane sLayout = (AnchorPane) loader.load();
@@ -139,9 +145,38 @@ public class MainApp extends Application {
 
             TSelectController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
+			controller.setMainApp(this);
+			controller.init();
 	        dialogStage.showAndWait();
 //	        controller.getSid();
 //			
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	public MainApp getMainApp(){
+		return this;
+	}
+	public void sAdd() {
+		// TODO Auto-generated method stub
+		try {
+		 	FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/AddStudent.fxml"));     
+            
+            AnchorPane sLayout = (AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Student Add");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(sLayout);
+            dialogStage.setScene(scene);
+
+            AddStuController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+//			controller.setMainApp(this);
+//			controller.init();
+	        dialogStage.showAndWait();
+		
         } catch (IOException e) {
             e.printStackTrace();
         }

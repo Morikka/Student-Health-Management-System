@@ -18,13 +18,13 @@ public class Student {
 	private final StringProperty Major;
 	
 	public Student(){
-		this.Sid = new SimpleStringProperty("0004");
-		this.Name = new SimpleStringProperty("StudentD");
+		this.Sid = new SimpleStringProperty("");
+		this.Name = new SimpleStringProperty("");
 		this.Sex = new SimpleBooleanProperty(false);
-		this.Birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1994, 2, 21));
-		this.Stame = new SimpleObjectProperty<LocalDate>(LocalDate.of(2014, 9, 1));
-		this.Phone = new SimpleStringProperty("1234521");
-		this.Major = new SimpleStringProperty("004");
+		this.Birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(0000, 0, 0));
+		this.Stame = new SimpleObjectProperty<LocalDate>(LocalDate.of(0000, 0, 0));
+		this.Phone = new SimpleStringProperty("");
+		this.Major = new SimpleStringProperty("");
 	}
 	
 	public StringProperty getSid() {

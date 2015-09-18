@@ -5,35 +5,40 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.view.TSelectController">
+<AnchorPane prefHeight="400.0" prefWidth="235.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.view.TSelectController">
    <children>
       <TabPane layoutX="50.0" layoutY="46.0" prefHeight="400.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab text="学生">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <SplitPane dividerPositions="0.3433734939759036" layoutX="127.0" layoutY="14.0" prefHeight="371.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                 <children>
-                                    <TableView fx:id="personTable" layoutX="-46.0" layoutY="47.0" prefHeight="369.0" prefWidth="168.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                      <columns>
-                                        <TableColumn fx:id="firstColumn" prefWidth="167.0" text="学号" />
-                                      </columns>
-                                    </TableView>
-                                 </children>
-                              </AnchorPane>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-                          </items>
-                        </SplitPane>
-                     </children></AnchorPane>
-            </content>
+               <content>
+                  <SplitPane dividerPositions="0.8733153638814016" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                    <items>
+                      <AnchorPane fx:id="upstud" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ListView fx:id="list" layoutX="81.0" layoutY="32.0" prefHeight="333.0" prefWidth="500.0" AnchorPane.bottomAnchor="-43.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="39.0" prefWidth="500.0">
+                           <children>
+                              <Button fx:id="add" layoutX="125.0" layoutY="11.0" mnemonicParsing="false" onAction="#addButton" text="添加" />
+                              <Button fx:id="modify" layoutX="73.0" layoutY="11.0" mnemonicParsing="false" onAction="#modifyButton" text="修改" />
+                              <Button fx:id="find" layoutX="21.0" layoutY="11.0" mnemonicParsing="false" onAction="#findButton" text="查询" />
+                              <Button fx:id="delete" layoutX="175.0" layoutY="11.0" mnemonicParsing="false" onAction="#deleteButton" text="删除" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
           </Tab>
           <Tab text="成绩">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
+               <content>
+                  <SplitPane dividerPositions="0.9083557951482479" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                    </items>
+                  </SplitPane>
+               </content>
           </Tab>
         </tabs>
       </TabPane>

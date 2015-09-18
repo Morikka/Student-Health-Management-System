@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 
 import Controller.MainApp;
 import javafx.fxml.FXML;
@@ -26,30 +27,39 @@ public class SSelectController {
 	private Label phone;
 	@FXML
 	private Label major;	
-	
+	@FXML
+	private Label text;
     private String ssid;
-    private Stage dialogStage;
+    private MainApp mainApp;
+	public void setMainApp(MainApp mainApp) {
+	    this.mainApp = mainApp;
+	}
     @FXML
     private void initialize() {
+//    	ssid = mainApp.sSid;
+//System.out.println(ssid);
+    }
+    public void init(){
+	ssid = mainApp.sSid;
 System.out.println(ssid);
-    	//AddInformation();
+	try{
+        Class.forName("com.mysql.jdbc.Driver");
+    }catch(ClassNotFoundException e1){
+        e1.printStackTrace();
+    }
+	AddInformation();
+    AddText();
     }
     public void setDialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
     }
-	public void setSid(String ssid2) {
-		this.ssid = ssid2;
-	}
+
+
 	private void AddInformation() {
 		// TODO Auto-generated method stub
-		try{
-            //调用Class.forName()方法加载驱动程序
-            Class.forName("com.mysql.jdbc.Driver");
-System.out.println("成功加载MySQL驱动！");
-        }catch(ClassNotFoundException e1){
-System.out.println("找不到MySQL驱动!");
-            e1.printStackTrace();
-        }
+		boolean jud = false;
+		String str;
+		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-MM-dd"); 
+
         String url="jdbc:mysql://localhost:3306/stuhealthy";    //JDBC的URL    
         //调用DriverManager对象的getConnection()方法，获得一个Connection对象
         Connection conn;
@@ -58,21 +68,53 @@ System.out.println("找不到MySQL驱动!");
             //创建一个Statement对象
             Statement stmt = conn.createStatement(); //创建Statement对象
 System.out.print("成功连接到数据库！");
-            String sql = "select * from student";
+            String sql = "select * from student where sid  = '"+ssid+"'";
             ResultSet rs = stmt.executeQuery(sql);//创建数据对象
             while (rs.next()){
-            	//if(ssid.equals(rs.getString(1))&&spw.equals(rs.getString(2)))
+            	//if(ssid.equals(rs.getString(1))){
+            		jud = true;
+            		sid.setText(ssid);
+            		sname.setText(rs.getString(3));
+            		if(rs.getBoolean(4))
+            			sex.setText("men");
+            		else
+            			sex.setText("women");
+            		str = sdf.format(rs.getDate(5));
+            		birthday.setText(str);
+            		str = sdf.format(rs.getDate(6));
+            		stime.setText(str);
+            		phone.setText(rs.getString(7));
+            		major.setText(rs.getString(8));            		
+            	//}
             }
             rs.close();            
             stmt.close();
             conn.close();
         } catch (SQLException e){
             e.printStackTrace();
-        }
-		
+        }	
 	}
-	public void getSid() {
-		// TODO Auto-generated method stub
-System.out.println(ssid);		
+	private void AddText(){
+		String str="",str1;
+		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-MM-dd"); 
+		 String url="jdbc:mysql://localhost:3306/stuhealthy";
+	        Connection conn;
+	        try {
+	            conn = DriverManager.getConnection(url,"root","123456");
+	            Statement stmt = conn.createStatement();
+	            String sql = "select * from test_information where sid  = '"+ssid+"'";
+	            ResultSet rs = stmt.executeQuery(sql);
+	            while(rs.next()){
+	            	str1 = sdf.format(rs.getDate(2));
+	            	str+="体侧时间是"+str1+"\n年龄: "+rs.getInt(3)+"\n身高: "+rs.getInt(4)+"\n体重"+rs.getInt(4)
+	            	+"\n肺活量:"+rs.getInt(5)+ "\n五十米跑+"+rs.getDouble(6)+"\n跳远"+rs.getDouble(7)+"\n\n";
+	            }
+	            rs.close();            
+	            stmt.close();
+	            conn.close();
+	        } catch (SQLException e){
+	            e.printStackTrace();
+	        }	
+	        text.setText(str);
 	}
 }
