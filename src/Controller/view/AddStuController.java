@@ -30,13 +30,13 @@ private TextField sdate;
 private TextField phone;
 @FXML
 private TextField major;
-private String ssid;
-private String ssname;
-private String ssex;
-private String sbirthday;
-private String ssdate;
-private String sphone;
-private String smajor;
+private String ssid = "";
+private String ssname = "";
+private String ssex = "";
+private String sbirthday = "";
+private String ssdate = "";
+private String sphone = "";
+private String smajor = "";
 private Stage dialogStage;
 public void setDialogStage(Stage dialogStage) {
     this.dialogStage = dialogStage;
