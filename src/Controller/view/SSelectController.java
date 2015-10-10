@@ -60,16 +60,13 @@ System.out.println(ssid);
 		String str;
 		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-MM-dd"); 
 
-        String url="jdbc:mysql://localhost:3306/stuhealthy";    //JDBC的URL    
-        //调用DriverManager对象的getConnection()方法，获得一个Connection对象
+        String url="jdbc:mysql://localhost:3306/stuhealthy";
         Connection conn;
         try {
             conn = DriverManager.getConnection(url,"root","123456");
-            //创建一个Statement对象
-            Statement stmt = conn.createStatement(); //创建Statement对象
-System.out.print("成功连接到数据库！");
+            Statement stmt = conn.createStatement(); 
             String sql = "select * from student where sid  = '"+ssid+"'";
-            ResultSet rs = stmt.executeQuery(sql);//创建数据对象
+            ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()){
             	//if(ssid.equals(rs.getString(1))){
             		jud = true;
@@ -106,8 +103,8 @@ System.out.print("成功连接到数据库！");
 	            ResultSet rs = stmt.executeQuery(sql);
 	            while(rs.next()){
 	            	str1 = sdf.format(rs.getDate(2));
-	            	str+="体侧时间是"+str1+"\n年龄: "+rs.getInt(3)+"\n身高: "+rs.getInt(4)+"\n体重"+rs.getInt(4)
-	            	+"\n肺活量:"+rs.getInt(5)+ "\n五十米跑+"+rs.getDouble(6)+"\n跳远"+rs.getDouble(7)+"\n\n";
+	            	str+="体侧时间："+str1+"\n年龄（岁）: "+rs.getInt(3)+"\n身高（厘米）: "+rs.getInt(4)+"\n体重（公斤）："+rs.getInt(5)
+	            	+"\n肺活量（毫升）:"+rs.getInt(6)+ "\n五十米跑（毫秒）："+rs.getDouble(7)+"\n跳远（米）："+rs.getDouble(8)+"\n\n";
 	            }
 	            rs.close();            
 	            stmt.close();

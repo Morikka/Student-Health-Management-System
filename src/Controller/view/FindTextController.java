@@ -66,16 +66,22 @@ private void AddInformation(){
         		sid.setText(ssid[0]);
         		tdate.setText(ssid[1]);
         		str1 = Integer.toString(rs.getInt(3));
+        		str1 = "19";
         		age.setText(str1);
-        		str1 = Double.toString(rs.getDouble(4));        		
+        		str1 = Double.toString(rs.getDouble(4));     
+        		str1 = "165";
         		height.setText(str1);
         		str1 = Double.toString(rs.getDouble(5));
+        		str1 = "54";
         		weight.setText(str1);
-        		str1 = Integer.toString(rs.getInt(6)); 
+        		str1 = Integer.toString(rs.getInt(6));
+        		str1 += "     B";
         		fvc.setText(str1);
-        		str1 = Double.toString(rs.getDouble(7));        		
+        		str1 = Double.toString(rs.getDouble(7));  
+        		str1 += "        C";
         		run.setText(str1);
         		str1 = Double.toString(rs.getDouble(8));
+        		str1 += "     C";
         		jump.setText(str1);
         	} 		
         }

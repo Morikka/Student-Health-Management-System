@@ -34,7 +34,7 @@ private TextField run;
 private TextField jump;
 
 private String ssid = "";
-private String ttdate= "";
+private String stdate= "";
 private String sage = "";
 private String sheight = "";
 private String sweight= "";
@@ -48,7 +48,14 @@ public void setDialogStage(Stage dialogStage) {
 }
 @FXML
 private void SureButton() throws ParseException {
-
+	 ssid = sid.getText();
+	 stdate = tdate.getText();
+	 sage = age.getText();
+	 sheight = height.getText();
+	 sweight = weight.getText();
+	 sfvc = fvc.getText();
+	 srun = run.getText();
+	 sjump = jump.getText();
 	 String url="jdbc:mysql://localhost:3306/stuhealthy";
      Connection conn;
      try {

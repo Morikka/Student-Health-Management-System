@@ -132,11 +132,13 @@ System.out.println(rs.getString(1)+" "+rs.getString(2));
 	}
 	@FXML
 	private void tAddButton(){
-		
+		mainApp.sAdd();
+        findlist();
 	}
 	@FXML
-	private void tModifyButton(){
-		
+	private void tModifyButton() throws ParseException{
+		tDeleteButton();
+		tAddButton();
 	}
 	@FXML
 	private void tDeleteButton() throws ParseException{

@@ -65,7 +65,7 @@ public class SLoginController {
     		Alert alert = new Alert(AlertType.INFORMATION);
     		alert.setTitle("Information Dialog");
     		alert.setHeaderText(null);
-    		alert.setContentText("请输入正确的用户名或密码!");
+    		alert.setContentText("请检查输入是否正确");
     		alert.showAndWait();
     	}
 	    //okClicked = true;
